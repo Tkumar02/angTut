@@ -8,6 +8,8 @@ import { PostComponent } from './post/post.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { EnterWordComponent } from './enter-word/enter-word.component';
 import { DisplayWordComponent } from './display-word/display-word.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,10 +19,12 @@ import { DisplayWordComponent } from './display-word/display-word.component';
     PostListComponent,
     EnterWordComponent,
     DisplayWordComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,12 +6,15 @@ import { PostListComponent } from './post-list/post-list.component';
 import { PostComponent } from './post/post.component';
 import { EnterWordComponent } from './enter-word/enter-word.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 const routes: Routes = [
-    { path: '', component: PostComponent},
+    { path: '', component: HomePageComponent},
+    { path: 'post', component: PostComponent},
     { path: 'nav', component: NavbarComponent},
     { path: 'post-list', component: PostListComponent},
     { path: 'display', component: DisplayWordComponent},
+    { path: 'enter', component: EnterWordComponent}
 ];
 
 @NgModule({
