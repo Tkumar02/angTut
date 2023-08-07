@@ -1,4 +1,0 @@
-<p>enter-word works!</p>
-<app-display-word [displayWord]="wordToDisplay"></app-display-word>
-<input type="text" (keyup.space)="copyWord(thisBox.value)" #thisBox (keyup.enter)="enterKey()" (keyup)="checkCode($event)" [style.backgroundColor]="bgColour ? 'yellow' : 'brown'">
-<button (click)="sendFunction()">Send to App</button>

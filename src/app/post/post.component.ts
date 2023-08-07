@@ -1,27 +1,31 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
-export class PostComponent implements OnInit {
-
-  title: string = "List of posts";
-  postMessageD:string = 'Coming from parent post component';
-  childMessage:any = 'from child component';
-  outputChildMessage: any = 'message via output Post'
-
-  @Input() fromParentApp!: string;
-
-  @Output() messageEvent = new EventEmitter<string>();
+export class PostComponent {
+  title: any = '';
+  imageLink: any = '';
+  noBG: boolean = false;
+  
+  @Output() sendLink = new EventEmitter<string>
 
   constructor () {}
 
-  ngOnInit(): void {
+  changeColour(){
+    this.noBG = !this.noBG
+    console.log('pressed')
+    if(this.noBG){
+      console.log('on')
+    }
+    else{
+      console.log('off')
+    }
   }
 
-  sendMessage(){
-    this.messageEvent.emit(this.outputChildMessage);
+  emitLink(){
+    this.sendLink.emit(this.imageLink)
   }
 }

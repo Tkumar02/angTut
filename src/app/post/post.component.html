@@ -1,4 +1,12 @@
-<h1>{{title}}</h1>
-<h3>{{fromParentApp}}</h3>
-<app-post-list [postMessage]="postMessageD"></app-post-list>
-<button (click)="sendMessage()">Click</button>
+<div class="container">
+    <h1>Post Form</h1>
+    <input type="text" [(ngModel)]="title" placeholder="Background Colour">
+    <textarea [style.backgroundColor]="title" name="postBody" id="" cols="30" rows="10" placeholder="Body of post"></textarea>
+    <input type="text" [(ngModel)]="imageLink" placeholder="Image Link">
+    <input type="text" placeholder="Site Link">
+    <p>
+        <input type="checkbox" (change)="changeColour()">
+        Add Background
+    </p>
+    <button (click)="emitLink()">Submit</button>
+</div>

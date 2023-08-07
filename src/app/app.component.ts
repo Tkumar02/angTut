@@ -1,36 +1,20 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
-import { PostComponent } from './post/post.component';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements AfterViewInit {
-  title = 'AngOne';
-  parentMessage: string = 'Message coming from parent component (app component)';
-  message!: string;
-  childMessage!: string;
-  enteredWord: string='which word?';
-  bool: boolean = false;
-  imgAdd: string = 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg'
-
-  @ViewChild(PostComponent) childComp:any;
-  
+export class AppComponent{
+  link: string = 'https://www.freepik.com/free-ai-image/leafy-tree-branch-vibrant-autumn-colors-generated-by-ai_40971503.htm#query=royalty%20free&position=0&from_view=keyword&track=ais'
+ 
   constructor() {
     console.log("what happens here?")
   }
 
-  ngAfterViewInit(): void {
-    console.log(this.childComp.childMessage);
-    this.message = this.childComp.childMessage;
-  }
-  receivedMessage($event: any){
-    console.log($event);
-    this.childMessage = $event;
+  viewLink($event:any){
+    console.log($event)
+    this.link=$event
   }
 
-  showWord($event: any){
-    this.enteredWord = $event;
-  }
 }
