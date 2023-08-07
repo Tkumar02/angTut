@@ -7,8 +7,21 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class EnterWordComponent {
   
-  inputWord:string = ''
+  inputWord:string = '';
+  hide: boolean = true;
+  chosenWord: string = '';
+   
+  @Output() word = new EventEmitter<string>();
 
   constructor () {}
 
+  showWord($event: any){
+    this.hide = ($event.keyCode == 13) && (this.inputWord.length==5) ? false : true
+  }
+
+  submitWord(){
+    console.log(this.inputWord)
+    this.word.emit(this.inputWord)
+    this.chosenWord = ''
+  }
 }

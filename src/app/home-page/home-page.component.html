@@ -1,1 +1,9 @@
-<p>home-page works!</p>
+<app-enter-word (word)="showWord($event)"></app-enter-word>
+<button (click)="displayWord()">Show Word</button>
+
+<div [ngClass]='{"wordDisplay":show}'>
+    {{chosenWord}}
+    hi
+</div>
+
+<p>{{chosenWord}}</p>

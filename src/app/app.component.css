@@ -2,6 +2,10 @@
     color: purple;
 }
 
+nav{
+    display: flex;
+}
+
 img{
     width:300px;
     height: 300px;

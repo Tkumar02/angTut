@@ -1,1 +1,8 @@
-<input type="text" [(ngModel)]="inputWord">
+<input type="text" [(ngModel)]="inputWord" (keyup)="showWord($event)" maxlength="5">
+
+<div [ngClass]='{"confirm":hide}' [style.margin-top]="'100px'">
+    Would you like to confirm:
+    {{inputWord}}
+</div>
+
+<button [ngClass]='{"confirm":hide}' (click)="submitWord()">Submit</button>
