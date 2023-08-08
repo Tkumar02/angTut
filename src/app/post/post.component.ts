@@ -7,8 +7,10 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class PostComponent {
   title: any = '';
-  imageLink: any = '';
+  imageLink: string='';
   noBG: boolean = false;
+  detailsLink: string = '';
+  postBody: string = '';
   
   @Output() sendLink = new EventEmitter<string>
 

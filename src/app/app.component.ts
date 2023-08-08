@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent{
-  link: string = 'https://www.freepik.com/free-ai-image/leafy-tree-branch-vibrant-autumn-colors-generated-by-ai_40971503.htm#query=royalty%20free&position=0&from_view=keyword&track=ais'
+  link: string = 'https://img.freepik.com/free-vector/white-goat-cartoon-character_1308-108587.jpg?w=2000'
  
   constructor() {
     console.log("what happens here?")

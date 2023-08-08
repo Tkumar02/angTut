@@ -1,12 +1,19 @@
 <div class="container">
     <h1>Post Form</h1>
     <input type="text" [(ngModel)]="title" placeholder="Background Colour">
-    <textarea [style.backgroundColor]="title" name="postBody" id="" cols="30" rows="10" placeholder="Body of post"></textarea>
+    <textarea [style.backgroundColor]="title" [(ngModel)]="postBody" id="" cols="30" rows="10" placeholder="Body of post"></textarea>
     <input type="text" [(ngModel)]="imageLink" placeholder="Image Link">
-    <input type="text" placeholder="Site Link">
+    <input type="text" [(ngModel)]="detailsLink" placeholder="Site Link">
     <p>
         <input type="checkbox" (change)="changeColour()">
         Add Background
     </p>
     <button (click)="emitLink()">Submit</button>
+    </div>
+
+<div class="container">
+    <h1 [class.backg]='noBG'>{{title}}</h1>
+    <p>{{postBody}}</p>
+    <a [href]="detailsLink" target="_blank" [style.display]="detailsLink?'block':'none'">More details</a>
+
 </div>
