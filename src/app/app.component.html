@@ -1,15 +1,1 @@
-<h1 [class.text-purple]="bool">App Component</h1>
-<img [src]="imgAdd"/>
-<h1 [style.color] = "bool? 'red' : 'green'">Style binding - styling dom binding is a little different to css styles - check it out on w3schools dom styling properties</h1>
-<p>{{enteredWord}}</p>
-<p>{{message}}</p>
-<app-post [fromParentApp]="parentMessage" (messageEvent)="receivedMessage($event)"></app-post>
-<p>{{childMessage}}</p>
-<app-enter-word (emitThis)="showWord($event)"></app-enter-word>
-<nav>
-    <a routerLink="nav">Go to Nav Page</a>
-</nav>
-
-<a routerLink="/display">Go to Display Page</a>
-
 <router-outlet></router-outlet>
