@@ -1,12 +1,5 @@
-<div>
-    <button (click)="changeForm('step1')">Step 1</button>
-    <button (click)="changeForm('step2')">Step 2</button>
-    <button (click)="changeForm('step3')">Step 3</button>
-</div>
-
-<div [ngSwitch]="form">
-    <div *ngSwitchCase="'step1'">Form 1</div>
-    <div *ngSwitchCase="'step2'">Form 2</div>
-    <div *ngSwitchCase="'step3'">Form 3</div>
-    <div *ngSwitchDefault>No forms available</div>
-</div>
+<h3 [ngStyle]="{
+    color: changeStyle ? 'blue': 'red',
+    textTransform: changeStyle ? 'lowercase' : 'uppercase'
+}">NgStyle Directive</h3>
+<button (click)="change()"> Change </button>

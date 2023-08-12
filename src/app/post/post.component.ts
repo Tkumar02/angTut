@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent {
-  form: string = ''
-  changeForm(status:string){
-    this.form = status
-    console.log(this.form)
-  } 
+  changeStyle: boolean = false
+  
+  change(){
+    this.changeStyle = !this.changeStyle
+  }
 }
