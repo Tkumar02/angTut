@@ -1,7 +1,10 @@
-.red{
-    color: red;
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.capitals{
-    text-transform: uppercase;
+table{
+    width: 70vw;
+    text-align: center;
 }

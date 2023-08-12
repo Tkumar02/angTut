@@ -1,5 +1,36 @@
-<h3 [ngClass]="{
-    red: changeStyle,
-    capitals: changeStyle
-}">NgClass Directive</h3>
-<button (click)="change()"> Change </button>
+<div class="main">
+<h3>User Details</h3>
+
+    <input type="text" placeholder="Name" [(ngModel)]="name"><br>
+    <input type="email" placeholder="Email" [(ngModel)]="email"><br>
+    <textarea cols="30" rows="10" placeholder="Address" [(ngModel)]="address"></textarea><br>
+
+    <button  (click)="save()">Save Data</button><br><br>
+
+    <div *ngIf="completedForms.length==0; then noData else data"></div>
+
+    <ng-template #noData>
+        <h4>No data to view</h4>
+    </ng-template>
+
+    <ng-template #data>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                </tr>
+                <tr *ngFor="let form of completedForms; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{form.name1}}</td>
+                    <td>{{form.email1}}</td>
+                    <td>{{form.address1}}</td>
+                    <button (click)="delete(i)">Delete</button>
+                </tr>
+            </thead>
+        </table>
+    </ng-template>
+</div>

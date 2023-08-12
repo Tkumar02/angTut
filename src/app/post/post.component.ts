@@ -6,9 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent {
-  changeStyle: boolean = false
+  name: string = '';
+  email: string = '';
+  id: number = 0;
+  address: string = '';
+  completedForms: Array<any> = [];
   
-  change(){
-    this.changeStyle = !this.changeStyle
+  constructor() {}
+
+  save(){
+    this.id = this.completedForms.length+1
+    this.completedForms.push({name1:this.name, email1:this.email, address1: this.address})
   }
+
+  delete(i:number){
+    this.completedForms.splice(i,1)
+  }
+
 }
