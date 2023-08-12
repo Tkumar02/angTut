@@ -1,18 +1,11 @@
-<p>Post component works</p>
-<p>{{postArray}}</p>
-
 <div>
-<button (click)="addPost()"> Add Data </button>
-</div><br>
+    <button (click)="changeForm('step1')">Step 1</button>
+    <button (click)="changeForm('step2')">Step 2</button>
+    <button (click)="changeForm('step3')">Step 3</button>
+</div>
 
-<div *ngIf="postObject.length>0; then data else noData"></div>
-
-<ng-template #data>
-    <ul>
-        <li *ngFor="let post of postObject; let i=index">{{post.title}} -- <button (click)="deletePost(i)">Delete</button></li>
-    </ul>
-</ng-template>
-
-<ng-template #noData>
-    No data to show
-</ng-template>
+<div [ngSwitch]="form">
+    <div *ngSwitchCase="'step1'">Form 1</div>
+    <div *ngSwitchCase="'step2'">Form 2</div>
+    <div *ngSwitchCase="'step3'">Form 3</div>
+</div>
