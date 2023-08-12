@@ -1,5 +1,5 @@
-<h3 [ngStyle]="{
-    color: changeStyle ? 'blue': 'red',
-    textTransform: changeStyle ? 'lowercase' : 'uppercase'
-}">NgStyle Directive</h3>
+<h3 [ngClass]="{
+    red: changeStyle,
+    capitals: changeStyle
+}">NgClass Directive</h3>
 <button (click)="change()"> Change </button>
