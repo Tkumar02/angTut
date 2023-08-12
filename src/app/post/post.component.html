@@ -1,1 +1,18 @@
 <p>Post component works</p>
+<p>{{postArray}}</p>
+
+<div>
+<button (click)="addPost()"> Add Data </button>
+</div><br>
+
+<div *ngIf="postObject.length>0; then data else noData"></div>
+
+<ng-template #data>
+    <ul>
+        <li *ngFor="let post of postObject; let i=index">{{post.title}} -- <button (click)="deletePost(i)">Delete</button></li>
+    </ul>
+</ng-template>
+
+<ng-template #noData>
+    No data to show
+</ng-template>
