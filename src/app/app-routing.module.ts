@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { PostListComponent } from './post-list/post-list.component';
-import { PostComponent } from './post/post.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './pages/home/home.component';
+import { SingleCategoryComponent } from './pages/single-category/single-category.component';
+import { SinglePostComponent } from './pages/single-post/single-post.component';
+import { TcComponent } from './pages/tc/tc.component';
 
 const routes: Routes = [
-    { path: 'nav', component: NavbarComponent},
-    { path: 'post-list', component: PostListComponent},
-];
+    { path: '', component: HomeComponent},
+    { path: 'category', component: SingleCategoryComponent},
+    { path: 'post', component: SinglePostComponent},
+    { path: 'tc', component: TcComponent},
+    ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

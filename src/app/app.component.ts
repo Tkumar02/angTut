@@ -8,6 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   
   constructor() {
-    console.log("what happens here? as asked in app component")
   }
 }
