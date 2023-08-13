@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PostService } from '../services/post.service';
+
 
 @Component({
   selector: 'app-post-list',
@@ -6,4 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent {
+  posts:Array<any> = []
+  constructor(private postService: PostService){
+    this.posts = postService.postList
+  }
 }

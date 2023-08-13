@@ -5,13 +5,18 @@ import { PostService } from '../services/post.service';
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css'],
-  providers: [PostService]
 })
 export class PostComponent {
 
   posts: Array<any> = []
 
   constructor(private postService:PostService){
-    this.posts = postService.postList
+    this.posts = postService.postList;
+  }
+
+  addData(){
+    let num = this.posts.length + 1
+    let newPost = {id: num, title:'post'+num}
+    this.postService.addPost(newPost)
   }
 }
