@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PostService } from '../services/post.service';
+import { Post } from '../models/post';
 
 @Component({
   selector: 'app-post',
@@ -16,7 +17,7 @@ export class PostComponent {
 
   addData(){
     let num = this.posts.length + 1
-    let newPost = {id: num, title:'post'+num}
+    let newPost:Post = {id: num, title:'post'+num}
     this.postService.addPost(newPost)
   }
 }
