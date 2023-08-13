@@ -1,13 +1,3 @@
-<h1>{{title | uppercase}}</h1>
-<div>{{dcValue | number: '1.2-2' }}</div>
-<div>{{price | currency: 'JPY'}}</div>
-<div>{{today | date: 'shortDate'}}</div>
-search datepipe angular in google
-
-<div>{{0.45 | percent}}</div>
-<div>{{newArray | slice: 1:3}}</div>
-<div>{{randomText | lowercase | summary: 70}}</div>
-<div [ngStyle]="{
-    color: 'red',
-    fontStyle: 'italic'
-}">see 4.04 on video to make custom pipes, witharguments 4:13</div>
+<ul *ngFor="let post of posts">
+    <li>{{post.title}} - {{post.id}}</li>
+</ul>

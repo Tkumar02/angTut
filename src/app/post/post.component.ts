@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'app-post',
@@ -6,10 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent {
-  title: string = 'Angular course';
-  dcValue: number = 12.345;
-  price: number = 99.99
-  today: Date = new Date();
-  newArray: Array<string> = ['post1','post2','post3','post4']
-  randomText: string = 'this is just some random text actually ("MICROSITE") MAY BE RESTRICTED UNDER SECURITIES LAWS OR REGULATIONS IN CERTAIN JURISDICTIONS.  THIS NOTICE REQUIRES YOU TO CONFIRM CERTAIN MATTERS (INCLUDING THAT YOU ARE NOT RESIDENT IN SUCH A JURISDICTION), BEFORE YOU MAY OBTAIN ACCESS TO THE INFORMATION ON THIS MICROSITE.  THESE MATERIALS ARE NOT DIRECTED AT OR INTENDED TO BE ACCESSIBLE BY PERSONS RESIDENT IN ANY JURISDICTION WHERE TO DO SO WOULD CONSTITUTE A VIOLATION OF THE RELEVANT LAWS OR REGULATIONS OF THAT JURISDICTION OR WOULD RESULT IN A REQUIREMENT TO OBTAIN A CONSENT OR COMPLY WITH ANY OTHER FORMALITY WHICH EMIS REGARDS AS UNDULY ONEROUS (A "RESTRICTED JURISDICTION").'
+
+  posts: Array<any> = []
+
+  constructor(){
+    let postService = new PostService();
+    this.posts = postService.postList
+  }
 }
