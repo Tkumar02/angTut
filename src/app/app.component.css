@@ -1,12 +1,5 @@
-.text-purple{
-    color: purple;
-}
-
-img{
-    width:300px;
-    height: 300px;
-}
-
 .app-body{
-    min-height: 85vh;
+    min-height: 35vh
 }
+
+/* did not add the 150px margin top in app-body */

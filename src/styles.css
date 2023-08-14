@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 :root{
-    --primary-color: rgb(20, 91, 20);
+    --primary-color: rgb(11, 88, 83);
     --secondary-color: rgb(215, 250, 234);
     --body-text-color: rgb(94, 91, 91);
     --navbar-footer-color: rgb(249, 253, 250);
@@ -19,5 +19,23 @@ body{
     box-shadow: 0px 0px 33px -10px rgba(7,114,254, 0.3);
 }
 
+.bg-theme{
+    background-color: var(--primary-color);
+}
+
+input[type = text], input[type = email] {
+    height: 60px;
+    padding-left: 20px;
+    font-size: 13px;
+    width: 100%;
+}
+
+.btn-theme{
+    color: white !important;
+    height: 58px;
+    border: none;
+    font-size: 13px;
+    background-color: var(--primary-color) !important;
+}
 
 
