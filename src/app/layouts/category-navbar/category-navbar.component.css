@@ -1,0 +1,8 @@
+nav{
+    margin-top: 100px;
+}
+
+.nav-link{
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
