@@ -6,13 +6,15 @@ import { SingleCategoryComponent } from './pages/single-category/single-category
 import { SinglePostComponent } from './pages/single-post/single-post.component';
 import { TcComponent } from './pages/tc/tc.component';
 import { PostCardComponent } from './layouts/post-card/post-card.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent},
     { path: 'category', component: SingleCategoryComponent},
     { path: 'post', component: SinglePostComponent},
     { path: 'tc', component: TcComponent},
-    { path: 'card', component: PostCardComponent}
+    { path: 'card', component: PostCardComponent},
+    { path: 'about', component: AboutUsComponent}
     ];
 
 @NgModule({
