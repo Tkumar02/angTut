@@ -18,11 +18,11 @@
       </button>
      
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+        <ul class="navbar-nav" *ngFor="let cat of catArray">
+          <li class="nav-item"><a href="#" class="nav-link">{{cat.data.catName}}</a></li>
+          <!-- <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li> -->
         </ul>
       </div>
     </div>
