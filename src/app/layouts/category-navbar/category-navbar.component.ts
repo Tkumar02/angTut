@@ -15,7 +15,7 @@ export class CategoryNavbarComponent {
   ngOnInit(): void {
     this.catService.loadData().subscribe(val=>{
       this.catArray = val;
-      console.log(this.catArray)
+      //console.log(this.catArray)
     })
     
   }

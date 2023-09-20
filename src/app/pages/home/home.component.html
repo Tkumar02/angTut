@@ -8,30 +8,9 @@
         </div>
         
         <div class="row">
-            <ng-container *ngFor="let post of postArray">
-            <div class="col-lg-3" *ngIf="post.data.isFeatured">
-                <div class="shadow-effect card">
-                    <img src={{post.data.postImgPath}} class="card-img-top" alt="post-image">
-                    <div class="card-body mt-2">
-                        <small class="bg-light text-danger text-center"> {{post.data.category.category}} </small>
-                        <small class="bg-light text-danger text-center ms-md-3"> Featured </small>
-                        <small class="bg-light text-danger text-center ms-md-3"> Views - 10 </small>
-                        <h5 class="mt-2">{{post.data.title}}</h5>
-                        <p>{{post.data.excerpt}}</p>
-                        <small class="bg-light text-warning text-center ms-3"> Last updated - June 20th, 2023</small>
-                    </div>
-                </div>
+            <div class="col-md-4" *ngFor="let fPost of featuredArray">
+                <app-post-card [postData] = "fPost"></app-post-card>
             </div>
-            </ng-container>
-            <!-- <div class="col-lg-3">
-                <app-post-card></app-post-card>
-            </div>
-            <div class="col-lg-3">
-                <app-post-card></app-post-card>
-            </div>
-            <div class="col-lg-3">
-                <app-post-card></app-post-card>
-            </div> -->
         </div>
     </div>
 </section>
@@ -40,35 +19,13 @@
     <div class="col-md-12 text-center">
         <h2>Latest Posts</h2>
         <p>Dummy text</p>
-        <div class="row">
-            <div class="col-md-4 mt-3" *ngFor="let post of postArray">
-                <div class="shadow-effect card">
-                    <img src={{post.data.postImgPath}} class="card-img-top" alt="post-image">
-                    <div class="card-body mt-2">
-                        <small class="bg-light text-danger text-center"> {{post.data.category.category}} </small>
-                        <small class="bg-light text-danger text-center ms-md-3" *ngIf="post.data.isFeatured"> Featured </small>
-                        <small class="bg-light text-danger text-center ms-md-3"> Views - 10 </small>
-                        <h5 class="mt-2">{{post.data.title}}</h5>
-                        <p>{{post.data.content}}</p>
-                        <small class="bg-light text-warning text-center ms-3"> Last updated - June 20th, 2023</small>
-                    </div>
-                </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mt-3" *ngFor="let post of latestArray">
+            <div class="shadow-effect card">
+                <app-post-card [postData] = "post"></app-post-card>
             </div>
-            <!-- <div class="col-md-4 mt-3">
-                <app-post-card></app-post-card>
-            </div>
-            <div class="col-md-4 mt-3">
-                <app-post-card></app-post-card>
-            </div>
-            <div class="col-md-4 mt-3">
-                <app-post-card></app-post-card>
-            </div>
-            <div class="col-md-4 mt-3">
-                <app-post-card></app-post-card>
-            </div>
-            <div class="col-md-4 mt-3">
-                <app-post-card></app-post-card>
-            </div> -->
         </div>
     </div>
+    
 </section>

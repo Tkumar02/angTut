@@ -1,11 +1,11 @@
-<div class="shadow-effect card" *ngFor="let post of postArray">
-    <img src={{post.data.postImgPath}} class="card-img-top" alt="post-image">
+<div class="shadow-effect card" *ngIf="postData">
+    <img src={{postData.data.postImgPath}} class="card-img-top" alt="post-image">
     <div class="card-body mt-2">
-        <small class="bg-light text-danger text-center"> Design </small>
-        <small class="bg-light text-danger text-center ms-md-3"> Featured </small>
-        <small class="bg-light text-danger text-center ms-md-3"> Views - 10 </small>
-        <h5 class="mt-2">{{post.data.title}}</h5>
-        <p>{{post.data.content}}</p>
-        <small class="bg-light text-warning text-center ms-3"> Last updated - June 20th, 2023</small>
+        <small class="bg-light text-danger text-center"> {{postData.data.category.catName}} </small>
+        <small *ngIf="postData.data.isFeatured" class="bg-light text-danger text-center ms-md-3"> Featured </small>
+        <small class="bg-light text-danger text-center ms-md-3"> Views - {{postData.data.views}} </small>
+        <h5 class="mt-2">{{postData.data.title}}</h5>
+        <p>{{postData.data.excerpt}}</p>
+        <small class="bg-light text-warning text-center ms-3"> Last updated - {{postData.data.createdAt.toMillis() | date}}</small>
     </div>
 </div>

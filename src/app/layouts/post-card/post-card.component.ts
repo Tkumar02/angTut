@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { PostService } from 'src/app/services/post.service';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-post-card',
@@ -9,11 +8,11 @@ import { PostService } from 'src/app/services/post.service';
 export class PostCardComponent {
   postArray: Array<any> = []
 
-  constructor(private postService: PostService){};
+  constructor(){}
+
+  @Input() postData: any = {};
 
   ngOnInit(): void {
-    this.postService.loadData().subscribe(val=>{
-      this.postArray = val
-    })
+    console.log(this.postData)
   }
 }
