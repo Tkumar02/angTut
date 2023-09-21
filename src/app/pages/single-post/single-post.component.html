@@ -38,10 +38,9 @@ Overall, a fab easy to install product, great quality gadget in an affordable pr
             <app-comment-form></app-comment-form>
             <app-comment-list></app-comment-list>
         </div>
-        <div class="col-md-3">
-            <app-post-card class="jump"></app-post-card>
-            <app-post-card [ngStyle]="{'max-height': '3vh', 'overflow': 'auto'}"></app-post-card>
-            <app-post-card [ngStyle]="{'max-height': '3vh', 'overflow': 'auto'}"></app-post-card>
+        <div class="col-md-3" *ngFor="let post of posts">
+            <!-- <app-post-card postData="post" class="jump"></app-post-card> -->
+            <app-post-card [postData]='post' [ngStyle]="{'max-height': '3vh', 'overflow': 'auto'}"></app-post-card>
         </div>
     </div>
 </div>

@@ -1,7 +1,9 @@
 <div class="shadow-effect card" *ngIf="postData">
-    <img src={{postData.data.postImgPath}} class="card-img-top" alt="post-image">
+    <a [routerLink]="['/single-post']">
+        <img src={{postData.data.postImgPath}} class="card-img-top" alt="post-image">
+    </a>
     <div class="card-body mt-2">
-        <small class="bg-light text-danger text-center"> {{postData.data.category.catName}} </small>
+        <small class="bg-light text-danger text-center"> {{postData.data.category.category}} </small>
         <small *ngIf="postData.data.isFeatured" class="bg-light text-danger text-center ms-md-3"> Featured </small>
         <small class="bg-light text-danger text-center ms-md-3"> Views - {{postData.data.views}} </small>
         <h5 class="mt-2">{{postData.data.title}}</h5>
