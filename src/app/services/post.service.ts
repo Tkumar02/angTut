@@ -31,7 +31,7 @@ export class PostService{
     }
 
     loadFeatured(){
-        return this.afs.collection('posts',ref => ref.where('isFeatured','==',true).limit(2)).snapshotChanges().pipe(
+        return this.afs.collection('posts',ref => ref.where('isFeatured','==',true).limit(3)).snapshotChanges().pipe(
             map(actions=>{
                 return actions.map(a=>{
                     const data = a.payload.doc.data();

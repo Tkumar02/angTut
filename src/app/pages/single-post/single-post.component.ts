@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PostService } from 'src/app/services/post.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-single-post',
@@ -8,17 +9,28 @@ import { PostService } from 'src/app/services/post.service';
 })
 export class SinglePostComponent {
 
-  posts: Array<any> = []
+  posts: Array<any> = [];
+  currentPost: any = {};
+  featured: Array<any> = [];
+  ID: any = '';
 
-  constructor(private postService: PostService){}
+  constructor(private postService: PostService, private route: ActivatedRoute){}
 
   ngOnInit(): void{
-    // this.postService.loadFeatured().subscribe(val=>{
-    //   this.posts = val;
-    // })
-    this.postService.loadFeatured().subscribe(val=>{
-      this.posts = val;
+    this.route.params.subscribe(val=>{
+      this.ID = val['id'];
     })
-    console.log(this.posts,'single component ts')
+    this.postService.loadFeatured().subscribe(val=>{
+      this.featured = val;
+      console.log(this.featured, 'channel 5')
+    })
+    this.postService.loadData().subscribe(val=>{
+      this.posts = val;
+      for(let post of this.posts){
+        if(post.id == this.ID){
+          this.currentPost = post
+        }
+      }
+    })
   }
 }

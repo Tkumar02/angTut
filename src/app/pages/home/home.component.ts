@@ -17,13 +17,10 @@ export class HomeComponent {
 
     this.postService.loadFeatured().subscribe(val=>{
       this.featuredArray = val;
-      console.log(this.featuredArray, 'in the function')
     })
 
     this.postService.loadLatest().subscribe(val=>{
       this.latestArray = val;
     })
-
-    console.log(this.featuredArray, 'coming from home component')
   }
 }

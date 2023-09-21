@@ -1,5 +1,5 @@
 <div class="shadow-effect card" *ngIf="postData">
-    <a [routerLink]="['/single-post']">
+    <a [routerLink]="['/single-post',postData.id]">
         <img src={{postData.data.postImgPath}} class="card-img-top" alt="post-image">
     </a>
     <div class="card-body mt-2">

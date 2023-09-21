@@ -11,7 +11,7 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 const routes: Routes = [
     { path: '', component: HomeComponent},
     { path: 'category/:category/:id', component: SingleCategoryComponent},
-    { path: 'single-post', component: SinglePostComponent},
+    { path: 'single-post/:id', component: SinglePostComponent},
     { path: 'post', component: SinglePostComponent},
     { path: 'tc', component: TcComponent},
     { path: 'card', component: PostCardComponent},
