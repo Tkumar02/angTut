@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { map } from 'rxjs/operators'
 
+
 @Injectable({
     providedIn: 'root',
 })
@@ -64,5 +65,9 @@ export class PostService{
                 })
             })
         )
+    }
+
+    loadOnePost(postId:any){
+        return this.afs.doc(`posts/${postId}`).valueChanges();
     }
 }

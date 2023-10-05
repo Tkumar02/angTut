@@ -9,28 +9,21 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SinglePostComponent {
 
-  posts: Array<any> = [];
   currentPost: any = {};
-  featured: Array<any> = [];
-  ID: any = '';
+  catPosts: Array<object> = []
 
   constructor(private postService: PostService, private route: ActivatedRoute){}
 
   ngOnInit(): void{
     this.route.params.subscribe(val=>{
-      this.ID = val['id'];
-    })
-    this.postService.loadFeatured().subscribe(val=>{
-      this.featured = val;
-      console.log(this.featured, 'channel 5')
-    })
-    this.postService.loadData().subscribe(val=>{
-      this.posts = val;
-      for(let post of this.posts){
-        if(post.id == this.ID){
-          this.currentPost = post
-        }
-      }
-    })
+      this.postService.loadOnePost(val['id']).subscribe(post=>{
+        this.currentPost = post;
+        console.log(this.currentPost.category)
+        this.postService.loadCategoryPosts(this.currentPost.category.categoryId).subscribe(val=>{
+          this.catPosts = val
+        })
+      })
+    }
+  )
   }
 }
