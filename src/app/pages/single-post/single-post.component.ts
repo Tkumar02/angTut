@@ -15,7 +15,9 @@ export class SinglePostComponent {
   constructor(private postService: PostService, private route: ActivatedRoute){}
 
   ngOnInit(): void{
+    console.log('TA LOOK HERE')
     this.route.params.subscribe(val=>{
+      this.postService.countViews(val['id'])
       this.postService.loadOnePost(val['id']).subscribe(post=>{
         this.currentPost = post;
         console.log(this.currentPost.category)
