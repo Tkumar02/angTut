@@ -80,7 +80,7 @@ export class PostService{
         }
 
         this.afs.doc(`posts/${postId}`).update(viewsCount).then(()=>{
-            console.log('Views count updated')
+            //console.log('Views count updated')
         })
     }
 }
